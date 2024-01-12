@@ -171,7 +171,7 @@ ard_nmf <- function(A, k_init = 2, k_max = 100, n_replicates = 1, tol = 1e-5, cv
     if (dense_mode) {
       model <- c_nmf_dense(A, At, tol, maxit, verbose > 2, L1, L2, threads, w_init_this)
     } else {
-      model <- c_nmf(A, At, tol, maxit, verbose > 2, L1, L2, threads, w_init_this)
+      model <- c_nmf(A, At, tol, maxit, verbose > 2, L1, L2, threads = threads, w_init_this)
     }
   } else {
     model <- c_nmf_sparse_list(A, At, tol, maxit, verbose > 2, L1, L2, threads, w_init_this)
